@@ -1,0 +1,16 @@
+
+
+CC=g++
+PROG=iotest
+CPPFLAGS=-g -Wall -std=c++11
+LDFLAGS=
+OBJS=io-test.o io.o
+
+$(PROG):$(OBJS)
+	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS)
+
+io-test.o:io-test.cc
+	$(CC) $(CPPFLAGS) -c io-test.cc
+
+io.o:io.cc io.h util.h
+	$(CC) $(CPPFLAGS) -c io.cc
